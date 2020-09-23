@@ -142,7 +142,7 @@ terraform destroy -parallelism=2
 docker pull hashicorp/terraform:0.12.29
 #docker run -i -t hashicorp/terraform:0.12.29 <command>
 docker run -it --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp hashicorp/terraform:0.12.29 sh
-/usr/src/myapp/ovirt # cd ovirt
+/usr/src/myapp # cd ovirt
 /usr/src/myapp/ovirt # terraform plan
 ```
 
