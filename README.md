@@ -126,7 +126,7 @@ module "controller-0" {
 ```
 
 
-# Rung terraform ovirt provider binary
+# Run terraform ovirt provider binary
 ```
 terraform init
 
@@ -135,4 +135,18 @@ terraform plan
 terraform apply -parallelism=2
 
 terraform destroy -parallelism=2
+```
+
+# Run terraform on docker
+```
+docker pull hashicorp/terraform:0.12.29
+#docker run -i -t hashicorp/terraform:0.12.29 <command>
+docker run -it --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp hashicorp/terraform:0.12.29 sh
+/usr/src/myapp/ovirt # cd ovirt
+/usr/src/myapp/ovirt # terraform plan
+```
+
+# To generate the missing public key again from the private key
+```
+ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
 ```

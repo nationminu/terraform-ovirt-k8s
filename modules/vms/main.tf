@@ -37,7 +37,7 @@ resource "ovirt_vm" "vm" {
   }  
    
   provisioner "file" {
-    source = "ssh/id_rsa"
+    source = "~/.ssh/id_rsa"
     destination = "/home/${var.vm_user_name}/.ssh/id_rsa"
   } 
 
