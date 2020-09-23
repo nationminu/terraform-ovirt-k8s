@@ -11,11 +11,11 @@ terraform {
 }
 
 locals {
-  vm_prefix = "example" #CHANGEME
-  vm_domains = "example.com" #CHANGEME
-  vm_username = "terra" #CHANGEME
-  vm_authorized_key = "${file(pathexpand("./ssh/id_rsa.pub"))}"
-  vm_private_key    = "${file(pathexpand("./ssh/id_rsa"))}"
+  vm_prefix = "mwsong" #CHANGEME
+  vm_domains = "mwocp.com" #CHANGEME
+  vm_username = "ssong" #CHANGEME
+  vm_authorized_key = "${file(pathexpand("~/.ssh/id_rsa.pub"))}"
+  vm_private_key    = "${file(pathexpand("~/.ssh/id_rsa"))}"
 }
 
 # Create VM call controller-0 
@@ -35,7 +35,7 @@ module "controller-0" {
   vm_private_ssh_key    = local.vm_private_key
 
   vm_nic_device     = "eth0"
-  vm_nic_ip_address = "10.65.40.x"  #CHANGEME
+  vm_nic_ip_address = "10.65.40.11"  #CHANGEME
   vm_nic_gateway    = "10.65.40.1"    
   vm_nic_netmask    = "255.255.255.0"
 } 
@@ -57,7 +57,7 @@ module "controller-1" {
   vm_private_ssh_key    = local.vm_private_key
 
   vm_nic_device     = "eth0"
-  vm_nic_ip_address = "10.65.40.x" #CHANGEME
+  vm_nic_ip_address = "10.65.40.12" #CHANGEME
   vm_nic_gateway    = "10.65.40.1"
   vm_nic_netmask    = "255.255.255.0"
 }  
@@ -79,7 +79,7 @@ module "controller-2" {
   vm_private_ssh_key    = local.vm_private_key
 
   vm_nic_device     = "eth0"
-  vm_nic_ip_address = "10.65.40.x" #CHANGEME
+  vm_nic_ip_address = "10.65.40.13" #CHANGEME
   vm_nic_gateway    = "10.65.40.1"
   vm_nic_netmask    = "255.255.255.0"
 }  
@@ -101,7 +101,7 @@ module "worker-0" {
   vm_private_ssh_key    = local.vm_private_key
 
   vm_nic_device     = "eth0"
-  vm_nic_ip_address = "10.65.40.x" #CHANGEME
+  vm_nic_ip_address = "10.65.40.16" #CHANGEME
   vm_nic_gateway    = "10.65.40.1"
   vm_nic_netmask    = "255.255.255.0"
 } 
@@ -123,7 +123,7 @@ module "worker-1" {
   vm_private_ssh_key    = local.vm_private_key
 
   vm_nic_device     = "eth0"
-  vm_nic_ip_address = "10.65.40.x" #CHANGEME
+  vm_nic_ip_address = "10.65.40.17" #CHANGEME
   vm_nic_gateway    = "10.65.40.1"
   vm_nic_netmask    = "255.255.255.0"
 }
@@ -145,7 +145,7 @@ module "worker-2" {
   vm_private_ssh_key    = local.vm_private_key
 
   vm_nic_device     = "eth0"
-  vm_nic_ip_address = "10.65.40.x" #CHANGEME
+  vm_nic_ip_address = "10.65.40.18" #CHANGEME
   vm_nic_gateway    = "10.65.40.1"
   vm_nic_netmask    = "255.255.255.0"
 }  
@@ -167,7 +167,7 @@ module "bastion" {
   vm_private_ssh_key    = local.vm_private_key
 
   vm_nic_device     = "eth0"
-  vm_nic_ip_address = "10.65.40.x" #CHANGEME
+  vm_nic_ip_address = "10.65.40.10" #CHANGEME
   vm_nic_gateway    = "10.65.40.1"
   vm_nic_netmask    = "255.255.255.0"
 } 

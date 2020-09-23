@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-terraform "$@" -parallelism=2
+terraform12 "$@" -parallelism=2
