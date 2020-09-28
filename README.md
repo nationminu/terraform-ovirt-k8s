@@ -93,12 +93,17 @@ cd terraform-provider-ovirt
 
 # windows
 ```
-docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp -e GOOS=windows -e GOARCH=386 golang:1.14 go build -v
+docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp -e GOOS=windows -e GOARCH=386 golang:1.15 go build -v
 ```
 
 # linux
 ```
-docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.14 go build -v
+docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.15 go build -v
+```
+
+# osx
+```
+docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp -e GOOS=darwin -e GOARCH=amd64 golang:1.15 go build -v
 ```
 
 # Configure terraform ovirt provider binary
