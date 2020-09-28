@@ -86,6 +86,7 @@ https://access.redhat.com/documentation/en-us/red_hat_virtualization/4.3/html-si
 
 
 # terraform ovirt provider build
+terraform <= 0.12 에서 사용 가능합니다.
 ```
 git clone https://github.com/oVirt/terraform-provider-ovirt
 cd terraform-provider-ovirt
